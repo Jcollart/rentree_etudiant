@@ -536,7 +536,7 @@ p {
         display: block;
     }
 
-    @media screen and (max-width:680px) {
+/*    @media screen and (max-width:680px) {
         .menu-mobile {
             display: block;
             color: #FFF;
@@ -572,12 +572,12 @@ p {
         position: absolute;
         margin-left: -3.5em;
         margin-top: -0.8em;
-        -ms-transform: rotate(-5deg);
+        -ms-transform: rotate(-5deg);*/
         /* IE 9 */
-        -webkit-transform: rotate(-5deg);
+        /*-webkit-transform: rotate(-5deg);*/
         /* Safari 3-8 */
-        transform: rotate(-5deg);
-    }
+       /* transform: rotate(-5deg);
+    }*/
 
 }
 
@@ -585,6 +585,14 @@ p {
 /*              FOOTER                      */
 /********************************************/
 .piedpage{
+
+    body {
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+       
+      }
+
  .container {
 
     display: flex;
@@ -598,7 +606,8 @@ p {
         width: auto;
         height: 30px;
         margin: 5px;
-    }}
+    }
+  }
 
     .reseaux_sociaux {
         display: flex;
