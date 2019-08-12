@@ -1,0 +1,52 @@
+/*#logo{
+    width:2em;
+   float:left;
+   margin-left: 2em;
+   position: relative;
+   z-index: 300;
+   
+}*/
+
+#logocm{
+    width:12em;
+    z-index: 30;
+    position:absolute;
+    margin-top: -2em;
+    margin-left:4.5em;
+
+}
+
+#logoVNB{
+    width:12em;
+    z-index: 30;
+    position:absolute;
+   /* margin-top: 1em;*/
+    margin-left:6em;
+
+}
+.mynavbar  {
+    background: transparent !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+nav {
+    
+}
+#navbarDropdown{
+    margin-left: 6em;
+}
+
+.fas {
+    margin-left: 4em;
+}
+
+#faq{
+    padding-left: 10em;
+}
+
+#contact{
+    padding-left: 25em;
+}

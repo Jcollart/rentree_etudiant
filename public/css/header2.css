@@ -1,0 +1,165 @@
+
+body{
+  margin: 0px;
+  padding:0px;
+  font-family: Verdana, Calibri, sans-serif;
+}
+
+nav > ul{
+  margin:0px;
+  padding:0px;
+  display:flex;
+  justify-content: space-between;
+}
+
+nav li{
+  list-style-type: none;
+}
+
+nav > ul > li{
+  float:left;
+  position: relative;
+}
+
+.sousmenu{
+  display:none;
+}
+
+nav input[type= checkbox]{
+  display:none;
+}  
+
+.menu-mobile{
+  display:none;
+}
+
+nav{
+  width:100%;
+  background-color: #FFF;
+}
+
+nav > ul::after{
+   content:"";
+   display:table;
+   clear: both;
+}
+
+nav  a{
+  display:inline-block;
+  text-decoration:none;
+}
+
+nav > ul > li > a{
+  padding: 20px 30px;
+  color:#000;
+}
+
+nav li:hover .sousmenu{
+  display: inline-block;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  padding: 0px;
+  z-index:100000;
+}
+
+.sousmenu li{
+  border-bottom: 1px solid #ccc;
+}
+
+.sousmenu li a{
+padding: 20px 30px;
+font-size:13px;
+color:#222538;
+width:270px;
+}
+
+.menu-home:hover{
+border-top:5px solid #e44d26;
+background-color:RGBa(220,220,220,0.15);
+}
+.menu-inscription:hover{
+  border-top:5px solid #e44d26;
+  background-color:RGBa(220,220,220,0.15);
+}
+.menu-logo:hover{
+  border-top:5px solid #e44d26;
+  background-color:RGBa(220,220,220,0.15);
+}
+.menu-contact:hover{
+  border-top:5px solid #e44d26;
+  background-color:RGBa(220,220,220,0.15);
+}
+.menu-faq:hover{
+  border-top:5px solid #e44d26;
+  background-color:RGBa(220,220,220,0.15);
+}
+
+nav ul li:hover a{
+  padding: 15px, 30px, 20px, 30px;
+}
+
+.menu-inscription .sousmenu{
+  background-color: transparent;
+}
+
+.sousmenu li:hover a{
+  color:#EEE;
+  font-weight:bold;
+}
+
+.menu-inscription .sousmenu li:hover{
+  background-color: RGB(210, 77, 60);
+}
+
+.menu-mobile{
+  display:none;
+}
+
+nav input [type=checkbox]{
+  display:none;
+}
+
+nav input[type=checkbox]:checked ~ ul{
+  display:block;
+}
+
+@media screen and (max-width:680px){
+  .menu-mobile{
+    display:block;
+    color:#FFF;
+    background-color: RGBa(29, 197, 151, 0.97);
+    text-align:center;
+    padding: 12px 0px
+  }
+  nav-ul{
+    display:none;
+  }
+  nav ul li a , nav ul li:hover a{
+    padding: 10px 0 10px 0pc;
+  }
+  nav ul li , nav ul li a{
+    width:100%;
+    text-align:center;
+  }
+  nav li:hover .sousmenu{
+    display:block;
+    position:static;
+  }
+}
+
+#logocm{
+  width:10em;
+  z-index: 600;
+  position:absolute;
+  margin-left: -3.5em;
+  margin-top: -0.8em;
+  -ms-transform: rotate(-5deg); /* IE 9 */
+  -webkit-transform: rotate(-5deg); /* Safari 3-8 */
+  transform: rotate(-5deg);
+}
+  
+
+
+
+

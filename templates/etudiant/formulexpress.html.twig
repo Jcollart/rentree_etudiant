@@ -1,0 +1,216 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<center><h1 style="color:rgb(233, 95, 16)"> INSCRIPTION CAROLO EXPRESS </h1><br>
+<p>Merci de remplir les champs ci-dessous pour inscrire votre équipe <br>
+    et participer à la course d'orientation qui pourra vous permettre <br>
+    de gagner des cadeaux en repondant à un questionnaire sur les <br>
+    principaux lieux de la ville.
+</p></center>
+
+
+        <div class="form" action="/ma-page-de-formulaire" method="post">
+            <div>
+                    <label for="name"><strong>Etablissement:</strong></label>
+                    <select name="etablissement" id="etablissement">
+                        <option value="IUTRCC">Institut Universitaire de Technologie (IUT RCC)</option>
+                        <option value="EiSINe">Ecole d’Ingénieurs en Sciences Industrielles et Numérique (EiSINe)</option>
+                        <option value="INSPE">Institut national Supérieur du Professorat et de l’Education (INSPÉ)</option>
+                        <option value="EGC">Ecole de gestion et de commerce (EGC)</option>
+                        <option value="SIMPLON">Ecole Simplon</option>
+                        <option value="ISCEE">Institut supérieur de comptabilité et d’économie des entreprises (ISCEE)</option>
+                        <option value="ESNAM">Ecole supérieure nationale des Arts de la marionnettes (ESNAM)</option>
+                        <option value="IFSI">Institut de formation en soins infirmiers (IFSI)</option>
+                        <option value="CFAI">Centre de formation des apprentis de l’industrie (CFAI)</option>
+                        <option value="LABDA">Lycée agricole Balcon des Ardennes</option>
+                        <option value="LDMDB">Lycée des métiers de Bazeilles</option>
+                        <option value="LMDS">Lycée Sévigné</option>
+                        <option value="LDMB">Lycée des métiers Bazin</option>
+                        <option value="LC">Lycée Chanzy</option>
+                        <option value="LM">Lycée Monge</option>
+                        <option value="LJBC">Lycée JB Clément</option>
+                        <option value="LPB">Lycée Pierre Bayle</option>
+                        <option value="LSV">Lycée Simone Veil</option>
+                        <option value="LDA">Digitale Académie</option>
+                            
+                    </select>
+                </div>
+                <div>
+                        <label for="name"><strong>Nom de l'équipe (à votre choix):</strong></label>
+                        <input type="text" id="equipe" name="equipe">
+                    </div>
+                    <div>
+                        <label for="name"><strong>Participant:</strong></label>
+                        <input type="text" id="participant" name="participant">
+                    </div>
+
+            <div>
+                <label for="name"><strong>Nom:</strong></label>
+                <input type="text" id="name" name="Votre nom">
+            </div>
+        <br>
+            <div>
+                    <label for="name"><strong>Prénom:</strong></label>
+                    <input type="text" id="surname" name="Votre prénom">
+                </div>
+           <br>
+                <div>
+                        <label for="name"><strong>Mobile:</strong></label>
+                        <input type="text" id="name" name="Votre téléphone mobile">
+                    </div>
+                <br>
+            <div>
+                <label for="mail"><strong>E-mail:</strong></label>
+                <input type="email" id="mail" name="votre email">
+            </div>
+        <br>
+            <div>
+                <label for="name"><strong>Mot de passe:</strong></label>
+                <input type="password" id="password" name="password"></input>
+            </div>
+            <div class="row justify-content-center">
+                <button type="button" class="btn btn-light"><strong>S'inscrire</strong></button>
+                 </div>        
+<!-- Notre boite de vérification -->
+<div class="g-recaptcha" 
+          data-sitekey="6LeuNQITAAAAAPGRU7dkrCPIrrR64WPvzMc7pn6Z">
+          </div>
+          <input type="submit" id="valider" value="valider" />
+</div><br><br>
+
+        <section>
+
+                <center><h2> Vous désirez vous inscrire à une autre activitée ?</h2>
+                    <div class="arrow_box"></div><br><br>
+              
+                <section>
+                <a href="formulpiquenique.php"><button type="button" style="color:rgb(233, 95, 16)" href="formulpiquenique.php" class="btn btn-light">INSCRIPTION PIQUE-NIQUE</button></a>
+                </section><br>
+              
+                <section>
+                <a href="formulwarrior.php" ><button type="button" style="color:rgb(233, 95, 16)" href="formulwarrior.php" class="btn btn-light">INSCRIPTION CAROLO WARRIOR</button></a>
+                </section><br>
+              
+                <section>
+                <a href="formulcuisine.php" ><button type="button" style="color:rgb(233, 95, 16)"  href="formulcuisine.php" class="btn btn-light">INSCRIPTION CONCOURS DE CUISINE</button></a>
+                </section><br>
+              
+              </section></center>
+{% endblock %}
+
+{% block stylesheets %}
+<style>
+              
+              body {
+                background:  url(/img/eclair.png) no-repeat center/65% ,
+                 url(/img/logoetudiant.png) no-repeat right/20% ,
+                 url(/img/superhero2017.png) no-repeat left/35% ;
+                /*background-size: 65%;*/
+                 width:auto; 
+              }
+              .form {
+                  /* Uniquement centrer le formulaire sur la page */
+                  margin: 0 auto;
+                  width: 400px;
+                  /* Encadré pour voir les limites du formulaire */
+                  padding: 1em;
+                  border: 2px solid rgb(233, 95, 16);
+                  border-radius: 1em;
+                }
+                
+                .form div + div {
+                  margin-top: 1em;
+                }
+                
+                label {
+                  /* Pour être sûrs que toutes les étiquettes ont même taille et sont correctement alignées */
+                  display: inline-block;
+                  width: 90px;
+                  text-align:left ;
+                }
+                
+                select {
+                  /* Pour s'assurer que tous les champs texte ont la même police.
+                     Par défaut, les textarea ont une police monospace */
+                  font: 1em sans-serif;
+                
+                  /* Pour que tous les champs texte aient la même dimension */
+                  width: 300px;
+                  box-sizing: border-box;
+                  margin-left: 30px;
+                
+                  /* Pour harmoniser le look & feel des bordures des champs texte */
+                  border: 2px solid rgb(233, 95, 16);
+                }
+                
+                select:focus {
+                  /* Pour souligner légèrement les éléments actifs */
+                  border-color: #000;
+                }
+              
+                input {
+                  /* Pour s'assurer que tous les champs texte ont la même police.
+                     Par défaut, les textarea ont une police monospace */
+                  font: 1em sans-serif;
+                
+                  /* Pour que tous les champs texte aient la même dimension */
+                  width: 300px;
+                  box-sizing: border-box;
+                  margin-left: 30px;
+                
+                  /* Pour harmoniser le look & feel des bordures des champs texte */
+                  border: 2px solid rgb(233, 95, 16);
+                }
+                
+                input:focus {
+                  /* Pour souligner légèrement les éléments actifs */
+                  border-color: #000;
+                }
+                
+               .button {
+                  /* Pour placer le bouton à la même position que les champs texte */
+                  margin-left: 90px; /* même taille que les étiquettes */
+                }
+                
+                button {
+                  /* Cette marge supplémentaire représente grosso modo le même espace que celui
+                     entre les étiquettes et les champs texte */
+                  margin-left: .5em;
+                }
+              
+                .arrow_box {
+                  position: relative;
+                  background: rgb(233, 95, 16);
+                  border: 2px solid rgba(136, 183, 213, 0);
+                  border-bottom-color: #0a0a0a;
+              }
+              
+              .arrow_box:after, .arrow_box:before {
+                  top: 100%;
+                  left: 50%;
+                  border: solid transparent;
+                  content: " ";
+                  height: 0;
+                  width: 0;
+                  position: absolute;
+                  pointer-events: none;
+              }
+              
+              .arrow_box:after {
+                  border-color: rgba(136, 183, 213, 0);
+                  border-top-color: rgb(233, 95, 16);
+                  border-width: 30px;
+                  margin-left: -30px;
+              }
+              
+              .arrow_box:before {
+                  border-color: rgba(194, 225, 245, 0);
+                  border-top-color: #0a0a0a;
+                  border-width: 36px;
+                  margin-left: -36px;
+              }
+                            </style>
+{% endblock %}
+    
+    

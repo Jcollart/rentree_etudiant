@@ -1,0 +1,30 @@
+
+  body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+   
+  }
+
+
+
+.piedpage  {
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.container img{
+    width:auto;
+    height:30px;
+    margin:5px;
+}
+
+.reseaux_sociaux{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+

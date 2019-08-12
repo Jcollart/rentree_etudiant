@@ -1,0 +1,162 @@
+html {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    background-color: white;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+
+
+/******* SECTION ENTETE *******/
+.entete {
+    height: 100vh;
+    background-color: orange;
+    background-image: url(../img/fond.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    z-index:1;
+}
+
+.entete>img{
+    height: 80%;
+    z-index:3;
+}
+
+
+
+/******* PRESENTATION ********/
+.presentation {
+    position: relative;
+    height: 70vh;
+    background-color: white;
+}
+
+.presentation:after {
+    position: absolute;
+    height: 70vh;
+    content: '';
+    background-color: inherit;
+    top: -4em;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin: top left;
+    transform: skewY(2deg);
+}
+
+.carousel-item {
+    height: 70vh;
+    margin-left: 0%;
+    margin-right: -100% !important;
+    padding-left: 10%;
+    padding-right: 10%;
+    z-index: 5;
+}
+
+
+.carousel-item>.card {}
+
+.carousel-item>.card.mb-3 {
+    padding: 2em;
+    height: 70vh;
+    border: 0px solid rgba(0, 0, 0, .125);
+    justify-content: center;
+}
+
+.col-md-4 {}
+
+.col-md-4>img.card-img{
+    z-index: 20;
+}
+
+
+.carousel-control-next,
+.carousel-control-prev {
+    z-index: 5;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    width: 40px !important;
+    height: 40px !important;
+    background-color: orangered;
+    border-radius: 50%;
+}
+
+/******** SECTION NOUVELLE EDITION *********/
+.new_edition {
+    position: relative;
+    height: 30vh;
+    background-color: orangered;
+    padding-top: 4em;
+}
+
+
+#collapseExample>.card.card-body {
+    background-color: orangered;
+}
+
+/***.accordion>.card>.card-header{
+    position: static;
+}*/
+/* Je sais pas comment pousser les div du dessous !!!!*/
+
+
+/******* SECTION ANCIENNE EDITION ********/
+.ancienne_edition {
+    height: 50vh;
+    background-color: beige;
+}
+
+
+/******* SECTION TEMOIGNAGES ********/
+
+.temoignages {
+    height: 25vh;
+    position: relative;
+    background-color: white;
+}
+
+.temoignages:after {
+    position: absolute;
+    height: 25vh;
+    content: '';
+    background-color: inherit;
+    top: -4em;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin: top right;
+    transform: skewY(-2deg);
+}
+
+#carouselTemoignages>.carousel-inner>.carousel-item.active {
+    height: 25vh;
+}
+
+#carouselTemoignages {
+    height: 25vh;
+}
+
+.carousel-item>.card.mb-4 {
+    height: 25vh;
+    border: 0px solid rgba(0, 0, 0, .125);
+}
+
+.col-md-12>.card-body {
+    margin-top: 1.5%;
+
+
+}
+
+/*.footer{
+    background-color: black;
+    height: 25vh;
+}*/
