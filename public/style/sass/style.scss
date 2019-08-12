@@ -368,11 +368,11 @@ p {
 }
 
 /**** MEDIA QUERIES *****/
-
+/*
 @media (max-width: 500px) {
 
     /***PRESENTATION***/
-    .presentation {
+ /*   .presentation {
         height: 100vh;
     }
 
@@ -395,14 +395,14 @@ p {
     .carousel-item>.card.mb-3 {
         padding: 0.5em;
         height: 95vh;
-    }
+    }*/
 
     /***NEW EDITION***/
-    #button1 {
+/*    #button1 {
         height: 5em;
         width: 15em;
     }
-}
+}*/
 
 /********HEADER**************/
 
@@ -923,4 +923,61 @@ x:-o-prefocus,
 }
 
 /**********************************************/
-/*            
+/*             LOGIN ADMIN                    */
+/**********************************************/
+
+#containerlg{
+    width:400px;
+    margin:0 auto;
+    margin-top:10%;
+
+    body{
+        background: url(../img/fond.jpg);
+        background-size:cover;
+        height:100%
+    }
+    h1{
+        text-align: center;
+    }
+    
+
+/* Bordered form */
+form {
+    width:100%;
+    padding: 30px;
+    border: 2px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgb(0, 0, 0), 0 5px 5px 0 rgb(0, 0, 0);
+}
+#container h1{
+    width: 38%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+input[type=submit] {
+    background-color: rgb(233, 95, 16);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+input[type=submit]:hover {
+    background-color: white;
+    color: rgb(17, 16, 15);
+    border: 1px solid rgb(233, 95, 16);
+}
+}
