@@ -45,11 +45,11 @@ class EtudiantController extends AbstractController
         return $this->render('etudiant/formulwarrior.html.twig');
     }
     /**
-    *  @Route("/concourcuisinecuisine", name="concourcuisine")
+    *  @Route("/concourcuisine", name="concourcuisine")
      */
-    public function concourcuisine()
+    public function cuisine()
     {
-        return $this->render('etudiant/concourcuisine.html.twig');
+        return $this->render('etudiant/formulcuisine.html.twig');
     }
     /**
     *  @Route("/formulpiquenique", name="piquenique")
@@ -75,9 +75,32 @@ class EtudiantController extends AbstractController
     /**
     *  @Route("/admin", name="admin")
      */
-    private function admin()
+    public function admin()
     {
         return $this->render('etudiant/admin.html.twig');
     }
+    /**
+    *  @Route("/modification", name="modification")
+     */
+    public function modification()
+    {
+        return $this->render('etudiant/modificationadmin.html.twig');
+    }
+    /**
+    *  @Route("/modiformulaire", name="modiformulaire")
+     */
+    public function modiformulaire()
+    {
+        return $this->render('etudiant/modiformulaire.html.twig');
+    }
+    /**
+    *  @Route("/verification", name="verification")
+     */
+    public function verification()
+    {
+        return $this->render('etudiant/verification.php.twig');
+    }
 }   
+
+
 ?>

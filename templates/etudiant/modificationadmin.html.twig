@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h1> Modification des données<br> page accueil </h1>
+<br><br>
+<h2>Présentation avec mascotte</h2>
+<br><br>
+<form method="post" action="modif.php">
+<p>L'année de la rentrée étudiante :</p>
+<br>
+<input type="text" id="titre" name="annee" />
+<br>
+<p>Le jour de la rentrée étudiante :</p>
+<br>
+<input type="text" id="date" name="journee" />
+<br>
+<p>Modification du champs : "revivez l'année **** </p>
+<input type="text" id="revivre" name="revivre" />
+<br>
+<input type="submit" value="Envoyer les modifs">
+</form>
+
+<br><br>
+<h2>Descriptif de l'évenement :</h2>
+<br><br>
+<form method="post" action="modif.php">
+<br>
+<p>Modifiez : "c'est quand"</p>
+<input type="text" id="quand" name="quand" />
+<br>
+<p>Modifiez : "Qu'est que c'est?"</p>
+<br>
+<input type="text" id="quest" name="quest" />
+<br>
+<p>Modifiez: "c'est où ?"</p>
+<br>
+<input type="text" id="cestou" name="cestou" />
+<br>
+<p style:font-color=Modifiez : "C'est pour qui ?"</p>
+<br>
+<input type="text" id="pourqui" name="pourqui" />
+<br>
+<input type="submit" value="Envoyer les modifs">
+</form>
+<br><br>
+<h2><b>Modification accueil inscription</b></h2>
+<br><br>
+<form method="post" action="modif.php">
+<br>
+<input type="text" id="form1" name="cestou" />
+<br>
+<input type="text" id="form2" name="cestou" />
+<br>
+<input type="text" id="form3" name="cestou" />
+<br>
+<input type="text" id="form4" name="cestou" />
+<br>
+<input type="submit" value="Envoyer les modifs">
+</form>
+<br><br>
+<h2>Modification Edition passée</h2>
+<br><br>
+<form method="post" action="modif.php">
+<br>
+<p>Modifiez titre edition passée"</p>
+<input type="text" id="passee" name="" />
+<br>
+<input type="submit" value="Envoyer les modifs">
+</form>
+<br><br>
+<h2>Ajoutez une photo dans galerie</h2>
+<br><br>
+<form method="post" action="ajout.php">
+<input type="image" id="image1" alt="newsimage1" src="">
+<br>
+<input type="submit" value="Envoyer les modifs">
+</form>
+
+<br><br>
+<h2>Supprimez une photo dans galerie</h2>
+<br><br>
+<form method="post" action="suprim.php">
+<input type="image" id="image2" alt="newsimage2" src="">
+<br>
+<input type="submit" value="Envoyer les modifs">
+</form>
+
+<br><br>
+<h2>Modification Témoignages</h2>
+<br><br>
+<form method="post" action="ajout.php">
+
+<p>Ajoutez un temoignage</p>
+<br>
+<input type="text" id="temoin" name="temoin" />
+<br>
+<input type="submit" value="Envoyer les modifs">
+</form>
+
+
+
+
+{% endblock %}

@@ -1,4 +1,7 @@
 
+
+ 
+
   body {
     min-height: 100%;
     margin: 0;
@@ -6,9 +9,7 @@
    
   }
 
-
-
-.piedpage  {
+  .container  {
     display:flex;
     flex-wrap: wrap;
     align-items: center;

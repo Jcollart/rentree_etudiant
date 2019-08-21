@@ -1,0 +1,13 @@
+form{
+    width:60%;
+    display:inline-block;
+}
+
+h2 , h3{
+    text-decoration: underline;
+}
+body{
+    background:  url(/img/eclair.png) repeat center/65% ,
+   url(/img/logoetudiant.png) no-repeat right/20% ,
+   url(/img/superhero2017.png) no-repeat left/35% ;
+}

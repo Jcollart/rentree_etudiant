@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h1> Modification des données<br> page formulaire<br>CAROLO EXPRESS ET CAROLO WARRIOR</h1>
+<br><br>
+<form method="post" action="modif.php">
+
+<p>numero de participant :</p>
+<br>
+<input type="text" id="participant" name="participant" />
+<br>
+<p>nom de l'etudiant:</p>
+<input type="text" id="noms" name="noms" />
+<br>
+<p>Prenom du participant</p>
+<input type="text" id="prenoms" name="prenom" />
+<br>
+<p>Mail de l'tetudiant  :</p>
+<input type="text" id="email" name="email" />
+<br>
+<p>Numéro de téléphone</p>
+<input type="text" id="telephonie" name="telephonie" />
+<br>
+<input type="submit" value="Envoyer les modifs">
+</form>
+
+
+{% endblock %}

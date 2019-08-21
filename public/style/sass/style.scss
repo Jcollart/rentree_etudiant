@@ -413,6 +413,11 @@ p {
         font-family: Verdana, Calibri, sans-serif;
     }
 
+    nav {
+        width: 100%;
+        background-color: #FFF;
+    }
+
     nav>ul {
         margin: 0px;
         padding: 0px;
@@ -420,13 +425,15 @@ p {
         justify-content: space-between;
     }
 
-    nav li {
-        list-style-type: none;
-    }
+    
 
     nav>ul>li {
         float: left;
         position: relative;
+    }
+
+    nav li {
+        list-style-type: none;
     }
 
     .sousmenu {
@@ -441,10 +448,7 @@ p {
         display: none;
     }
 
-    nav {
-        width: 100%;
-        background-color: #FFF;
-    }
+    
 
     nav>ul::after {
         content: "";
