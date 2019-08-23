@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire index{% endblock %}
+
+{% block body %}
+    <h1>Formulaire index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type_formulaire</th>
+                <th>Etablissement</th>
+                <th>Equipe</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for formulaire in formulaires %}
+            <tr>
+                <td>{{ formulaire.id }}</td>
+                <td>{{ formulaire.typeFormulaire }}</td>
+                <td>{{ formulaire.etablissement }}</td>
+                <td>{{ formulaire.equipe }}</td>
+                <td>
+                    <a href="{{ path('formulaire_show', {'id': formulaire.id}) }}">show</a>
+                    <a href="{{ path('formulaire_edit', {'id': formulaire.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('formulaire_new') }}">Create new</a>
+{% endblock %}

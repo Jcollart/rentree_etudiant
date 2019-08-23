@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ListePoint{% endblock %}
+
+{% block body %}
+    <h1>Edit ListePoint</h1>
+
+    {{ include('liste_point/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('liste_point_index') }}">back to list</a>
+
+    {{ include('liste_point/_delete_form.html.twig') }}
+{% endblock %}

@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -40,6 +42,16 @@ class Administration
      * @ORM\Column(type="string", length=255)
      */
     private $email_administration;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Galerie", mappedBy="administration")
+     */
+    private $ajoute;
+
+    public function __construct()
+    {
+        $this->ajoute = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -102,6 +114,37 @@ class Administration
     public function setEmailAdministration(string $email_administration): self
     {
         $this->email_administration = $email_administration;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Galerie[]
+     */
+    public function getAjoute(): Collection
+    {
+        return $this->ajoute;
+    }
+
+    public function addAjoute(Galerie $ajoute): self
+    {
+        if (!$this->ajoute->contains($ajoute)) {
+            $this->ajoute[] = $ajoute;
+            $ajoute->setAdministration($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAjoute(Galerie $ajoute): self
+    {
+        if ($this->ajoute->contains($ajoute)) {
+            $this->ajoute->removeElement($ajoute);
+            // set the owning side to null (unless already changed)
+            if ($ajoute->getAdministration() === $this) {
+                $ajoute->setAdministration(null);
+            }
+        }
 
         return $this;
     }

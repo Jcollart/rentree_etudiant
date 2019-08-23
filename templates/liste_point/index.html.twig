@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ListePoint index{% endblock %}
+
+{% block body %}
+    <h1>ListePoint index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code_point</th>
+                <th>Question_point</th>
+                <th>Reponse1_point</th>
+                <th>Reponse2_point</th>
+                <th>Reponse3_point</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for liste_point in liste_points %}
+            <tr>
+                <td>{{ liste_point.id }}</td>
+                <td>{{ liste_point.codePoint }}</td>
+                <td>{{ liste_point.questionPoint }}</td>
+                <td>{{ liste_point.reponse1Point }}</td>
+                <td>{{ liste_point.reponse2Point }}</td>
+                <td>{{ liste_point.reponse3Point }}</td>
+                <td>
+                    <a href="{{ path('liste_point_show', {'id': liste_point.id}) }}">show</a>
+                    <a href="{{ path('liste_point_edit', {'id': liste_point.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('liste_point_new') }}">Create new</a>
+{% endblock %}

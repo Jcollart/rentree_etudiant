@@ -21,6 +21,17 @@ class Galerie
      */
     private $noms_image;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\theme")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $theme;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\administration", inversedBy="ajoute")
+     */
+    private $administration;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -34,6 +45,30 @@ class Galerie
     public function setNomsImage(string $noms_image): self
     {
         $this->noms_image = $noms_image;
+
+        return $this;
+    }
+
+    public function getTheme(): ?theme
+    {
+        return $this->theme;
+    }
+
+    public function setTheme(?theme $theme): self
+    {
+        $this->theme = $theme;
+
+        return $this;
+    }
+
+    public function getAdministration(): ?administration
+    {
+        return $this->administration;
+    }
+
+    public function setAdministration(?administration $administration): self
+    {
+        $this->administration = $administration;
 
         return $this;
     }

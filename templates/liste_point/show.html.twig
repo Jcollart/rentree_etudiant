@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ListePoint{% endblock %}
+
+{% block body %}
+    <h1>ListePoint</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ liste_point.id }}</td>
+            </tr>
+            <tr>
+                <th>Code_point</th>
+                <td>{{ liste_point.codePoint }}</td>
+            </tr>
+            <tr>
+                <th>Question_point</th>
+                <td>{{ liste_point.questionPoint }}</td>
+            </tr>
+            <tr>
+                <th>Reponse1_point</th>
+                <td>{{ liste_point.reponse1Point }}</td>
+            </tr>
+            <tr>
+                <th>Reponse2_point</th>
+                <td>{{ liste_point.reponse2Point }}</td>
+            </tr>
+            <tr>
+                <th>Reponse3_point</th>
+                <td>{{ liste_point.reponse3Point }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('liste_point_index') }}">back to list</a>
+
+    <a href="{{ path('liste_point_edit', {'id': liste_point.id}) }}">edit</a>
+
+    {{ include('liste_point/_delete_form.html.twig') }}
+{% endblock %}

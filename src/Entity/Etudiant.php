@@ -43,14 +43,19 @@ class Etudiant
      */
     private $mobile;
 
+   
+
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Etudiant", mappedBy="formulaire")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Formulaire", mappedBy="remplirform")
      */
-    private $formulaire;
+    private $formulaires;
+
+    
 
     public function __construct()
     {
         $this->formulaire = new ArrayCollection();
+        $this->formulaires = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -145,4 +150,5 @@ class Etudiant
 
         return $this;
     }
+
 }
