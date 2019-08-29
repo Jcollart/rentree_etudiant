@@ -4,6 +4,16 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Doctrine\Common\Persistence\ObjectManager;
+
+use App\Entity\Etudiant;
+use App\Entity\Formulaire;
+use App\Entity\Equipe;
+
+//use App\etudiant\for
+
+use App\Form\FormulaireType;
 
 class EtudiantController extends AbstractController
 {
@@ -33,16 +43,36 @@ class EtudiantController extends AbstractController
     /**
     *  @Route("/formulexpress", name="express")
      */
-    public function express()
+    public function express(Request $request, ObjectManager $manager)
     {
-        return $this->render('etudiant/formulexpress.html.twig');
+        $student = new Etudiant();
+        
+
+      
+        $form = $this->createForm(InscripType::class, $student);
+        return $this->render('etudiant/formulexpress.html.twig',[
+            'formStudent' => $form->createView(),
+        ]);
+
     }
     /**
     *  @Route("/formulwarrior", name="warrior")
      */
-    public function warrior()
+    public function warrior(Request $request, ObjectManager $manager)
     {
-        return $this->render('etudiant/formulwarrior.html.twig');
+        $student = new Etudiant();
+        $formul = $this->createForm(FormulaireType::class, $student);
+        $formul->handleRequest($request);
+
+        If($formul->isSubmitted() && $formul->isValid()){
+            $manager->persist($student);
+            $manager->flush();
+        }
+    
+        return $this->render('etudiant/formulwarrior.html.twig',[
+        'formStudent' => $formul->createView(),
+        ]);
+
     }
     /**
     *  @Route("/concourcuisine", name="concourcuisine")

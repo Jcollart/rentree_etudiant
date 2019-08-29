@@ -21,38 +21,38 @@ class Formulaire
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $type_formulaire;
+    private $Type_Formulaire;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $etablissement;
+    private $Etablissement;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $equipe;
+    private $Equipe;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Formulaire", mappedBy="remplirform")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Etudiant", mappedBy="remplirform")
      */
-    private $etudiant;
+    private $Etudiant;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\etudiant", inversedBy="formulaires")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Etudiant", inversedBy="Remplirform")
      */
-    private $remplirform;
+    private $Remplirform;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\equipe", inversedBy="relation")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Equipe", mappedBy="Relation")
      */
-    private $relation;
+    private $Relation;
 
     public function __construct()
     {
-        $this->etudiant = new ArrayCollection();
-        $this->remplirform = new ArrayCollection();
-        $this->relation = new ArrayCollection();
+        $this->Etudiant = new ArrayCollection();
+        $this->Remplirform = new ArrayCollection();
+        $this->Relation = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -62,62 +62,62 @@ class Formulaire
 
     public function getTypeFormulaire(): ?string
     {
-        return $this->type_formulaire;
+        return $this->Type_Formulaire;
     }
 
-    public function setTypeFormulaire(string $type_formulaire): self
+    public function setTypeFormulaire(string $Type_Formulaire): self
     {
-        $this->type_formulaire = $type_formulaire;
+        $this->Type_Formulaire = $Type_Formulaire;
 
         return $this;
     }
 
     public function getEtablissement(): ?string
     {
-        return $this->etablissement;
+        return $this->Etablissement;
     }
 
-    public function setEtablissement(string $etablissement): self
+    public function setEtablissement(string $Etablissement): self
     {
-        $this->etablissement = $etablissement;
+        $this->Etablissement = $Etablissement;
 
         return $this;
     }
 
     public function getEquipe(): ?string
     {
-        return $this->equipe;
+        return $this->Equipe;
     }
 
-    public function setEquipe(string $equipe): self
+    public function setEquipe(string $Equipe): self
     {
-        $this->equipe = $equipe;
+        $this->Equipe = $Equipe;
 
         return $this;
     }
 
     /**
-     * @return Collection|Formulaire[]
+     * @return Collection|Etudiant[]
      */
     public function getEtudiant(): Collection
     {
-        return $this->etudiant;
+        return $this->Etudiant;
     }
 
-    public function addEtudiant(Formulaire $etudiant): self
+    public function addEtudiant(Etudiant $etudiant): self
     {
-        if (!$this->etudiant->contains($etudiant)) {
-            $this->etudiant[] = $etudiant;
+        if (!$this->Etudiant->contains($etudiant)) {
+            $this->Etudiant[] = $etudiant;
             $etudiant->addRemplirform($this);
         }
 
         return $this;
     }
 
-    public function removeEtudiant(Formulaire $etudiant): self
+    public function removeEtudiant(Etudiant $etudiant): self
     {
-        if ($this->etudiant->contains($etudiant)) {
-            $this->etudiant->removeElement($etudiant);
+        if ($this->Etudiant->contains($etudiant)) {
+            $this->Etudiant->removeElement($etudiant);
             $etudiant->removeRemplirform($this);
         }
 
@@ -125,52 +125,54 @@ class Formulaire
     }
 
     /**
-     * @return Collection|etudiant[]
+     * @return Collection|Etudiant[]
      */
     public function getRemplirform(): Collection
     {
-        return $this->remplirform;
+        return $this->Remplirform;
     }
 
-    public function addRemplirform(etudiant $remplirform): self
+    public function addRemplirform(Etudiant $remplirform): self
     {
-        if (!$this->remplirform->contains($remplirform)) {
-            $this->remplirform[] = $remplirform;
+        if (!$this->Remplirform->contains($remplirform)) {
+            $this->Remplirform[] = $remplirform;
         }
 
         return $this;
     }
 
-    public function removeRemplirform(etudiant $remplirform): self
+    public function removeRemplirform(Etudiant $remplirform): self
     {
-        if ($this->remplirform->contains($remplirform)) {
-            $this->remplirform->removeElement($remplirform);
+        if ($this->Remplirform->contains($remplirform)) {
+            $this->Remplirform->removeElement($remplirform);
         }
 
         return $this;
     }
 
     /**
-     * @return Collection|equipe[]
+     * @return Collection|Equipe[]
      */
     public function getRelation(): Collection
     {
-        return $this->relation;
+        return $this->Relation;
     }
 
-    public function addRelation(equipe $relation): self
+    public function addRelation(Equipe $relation): self
     {
-        if (!$this->relation->contains($relation)) {
-            $this->relation[] = $relation;
+        if (!$this->Relation->contains($relation)) {
+            $this->Relation[] = $relation;
+            $relation->addRelation($this);
         }
 
         return $this;
     }
 
-    public function removeRelation(equipe $relation): self
+    public function removeRelation(Equipe $relation): self
     {
-        if ($this->relation->contains($relation)) {
-            $this->relation->removeElement($relation);
+        if ($this->Relation->contains($relation)) {
+            $this->Relation->removeElement($relation);
+            $relation->removeRelation($this);
         }
 
         return $this;

@@ -21,41 +21,42 @@ class Etudiant
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $noms;
+    private $Nom;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $prenoms;
+    private $Prenom;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $mot_de_passe;
+    private $Mot_De_Passe;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $email;
+    private $Email;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $mobile;
-
-   
+    private $Mobile;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Formulaire", mappedBy="remplirform")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Formulaire", inversedBy="Etudiant")
      */
-    private $formulaires;
+    private $remplirform;
 
-    
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Formulaire", mappedBy="Remplirform")
+     */
+    private $Remplirform;
 
     public function __construct()
     {
-        $this->formulaire = new ArrayCollection();
-        $this->formulaires = new ArrayCollection();
+        $this->remplirform = new ArrayCollection();
+        $this->Remplirform = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -63,92 +64,89 @@ class Etudiant
         return $this->id;
     }
 
-    public function getNoms(): ?string
+    public function getNom(): ?string
     {
-        return $this->noms;
+        return $this->Nom;
     }
 
-    public function setNoms(string $noms): self
+    public function setNom(string $Nom): self
     {
-        $this->noms = $noms;
+        $this->Nom = $Nom;
 
         return $this;
     }
 
-    public function getPrenoms(): ?string
+    public function getPrenom(): ?string
     {
-        return $this->prenoms;
+        return $this->Prenom;
     }
 
-    public function setPrenoms(string $prenoms): self
+    public function setPrenom(string $Prenom): self
     {
-        $this->prenoms = $prenoms;
+        $this->Prenom = $Prenom;
 
         return $this;
     }
 
     public function getMotDePasse(): ?string
     {
-        return $this->mot_de_passe;
+        return $this->Mot_De_Passe;
     }
 
-    public function setMotDePasse(string $mot_de_passe): self
+    public function setMotDePasse(string $Mot_De_Passe): self
     {
-        $this->mot_de_passe = $mot_de_passe;
+        $this->Mot_De_Passe = $Mot_De_Passe;
 
         return $this;
     }
 
     public function getEmail(): ?string
     {
-        return $this->email;
+        return $this->Email;
     }
 
-    public function setEmail(string $email): self
+    public function setEmail(string $Email): self
     {
-        $this->email = $email;
+        $this->Email = $Email;
 
         return $this;
     }
 
     public function getMobile(): ?int
     {
-        return $this->mobile;
+        return $this->Mobile;
     }
 
-    public function setMobile(int $mobile): self
+    public function setMobile(int $Mobile): self
     {
-        $this->mobile = $mobile;
+        $this->Mobile = $Mobile;
 
         return $this;
     }
 
     /**
-     * @return Collection|Etudiant[]
+     * @return Collection|Formulaire[]
      */
-    public function getFormulaire(): Collection
+    public function getRemplirform(): Collection
     {
-        return $this->formulaire;
+        return $this->remplirform;
     }
 
-    public function addFormulaire(Etudiant $formulaire): self
+    public function addRemplirform(Formulaire $remplirform): self
     {
-        if (!$this->formulaire->contains($formulaire)) {
-            $this->formulaire[] = $formulaire;
-            $formulaire->addFormulaire($this);
+        if (!$this->remplirform->contains($remplirform)) {
+            $this->remplirform[] = $remplirform;
         }
 
         return $this;
     }
 
-    public function removeFormulaire(Etudiant $formulaire): self
+    public function removeRemplirform(Formulaire $remplirform): self
     {
-        if ($this->formulaire->contains($formulaire)) {
-            $this->formulaire->removeElement($formulaire);
-            $formulaire->removeFormulaire($this);
+        if ($this->remplirform->contains($remplirform)) {
+            $this->remplirform->removeElement($remplirform);
         }
 
         return $this;
     }
-
 }

@@ -6,7 +6,7 @@
 
             <!-- zone de connexion -->
             
-            <form action="verification.php.twig" method="POST">
+            <form action="etudiant/verification.html.twig" method="POST">
                 <h2>Connexion</h2><br><br>
                 
                 <label><b>Nom d'utilisateur</b></label>
@@ -18,13 +18,13 @@
                 <input type="submit" id='submit' value='LOGIN' >
                
 
-            <!--  <?php
+              <?php
                 if(isset($_GET['erreur'])){
                     $err = $_GET['erreur'];
                     if($err==1 || $err==2)
                         echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
                 }
-                ?>-->
+                ?>
             </form>
         </div>
         {% endblock %}

@@ -2,28 +2,30 @@
 
 namespace App\Form;
 
-use App\Entity\ListePoint;
+use App\Entity\Etudiant;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ListePointType extends AbstractType
+class InscripType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('code_point')
-            ->add('question_point')
-            ->add('reponse1_point')
-            ->add('reponse2_point')
-            ->add('reponse3_point')
+            ->add('Nom')
+            ->add('Prenom')
+            ->add('Mot_De_Passe')
+            ->add('Email')
+            ->add('Mobile')
+            ->add('remplirform')
+            ->add('Remplirform')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => ListePoint::class,
+            'data_class' => Etudiant::class,
         ]);
     }
 }

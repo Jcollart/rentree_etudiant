@@ -21,22 +21,16 @@ class Equipe
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $noms_equipe;
+    private $Nom_Equipe;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Formulaire", mappedBy="relation")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Formulaire", inversedBy="Relation")
      */
-    private $relation;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Equipe", mappedBy="liste_point")
-     */
-    private $liste_point;
+    private $Relation;
 
     public function __construct()
     {
-        $this->relation = new ArrayCollection();
-        $this->liste_point = new ArrayCollection();
+        $this->Relation = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -44,14 +38,14 @@ class Equipe
         return $this->id;
     }
 
-    public function getNomsEquipe(): ?string
+    public function getNomEquipe(): ?string
     {
-        return $this->noms_equipe;
+        return $this->Nom_Equipe;
     }
 
-    public function setNomsEquipe(string $noms_equipe): self
+    public function setNomEquipe(string $Nom_Equipe): self
     {
-        $this->noms_equipe = $noms_equipe;
+        $this->Nom_Equipe = $Nom_Equipe;
 
         return $this;
     }
@@ -61,14 +55,13 @@ class Equipe
      */
     public function getRelation(): Collection
     {
-        return $this->relation;
+        return $this->Relation;
     }
 
     public function addRelation(Formulaire $relation): self
     {
-        if (!$this->relation->contains($relation)) {
-            $this->relation[] = $relation;
-            $relation->addRelation($this);
+        if (!$this->Relation->contains($relation)) {
+            $this->Relation[] = $relation;
         }
 
         return $this;
@@ -76,37 +69,8 @@ class Equipe
 
     public function removeRelation(Formulaire $relation): self
     {
-        if ($this->relation->contains($relation)) {
-            $this->relation->removeElement($relation);
-            $relation->removeRelation($this);
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Equipe[]
-     */
-    public function getListePoint(): Collection
-    {
-        return $this->liste_point;
-    }
-
-    public function addListePoint(Equipe $listePoint): self
-    {
-        if (!$this->liste_point->contains($listePoint)) {
-            $this->liste_point[] = $listePoint;
-            $listePoint->addListePoint($this);
-        }
-
-        return $this;
-    }
-
-    public function removeListePoint(Equipe $listePoint): self
-    {
-        if ($this->liste_point->contains($listePoint)) {
-            $this->liste_point->removeElement($listePoint);
-            $listePoint->removeListePoint($this);
+        if ($this->Relation->contains($relation)) {
+            $this->Relation->removeElement($relation);
         }
 
         return $this;
